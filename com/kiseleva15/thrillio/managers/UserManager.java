@@ -1,9 +1,11 @@
 package com.kiseleva15.thrillio.managers;
 
+import com.kiseleva15.thrillio.dao.UserDao;
 import com.kiseleva15.thrillio.entities.User;
 
 public class UserManager {
-	private static UserManager instance = new UserManager();
+	private static UserManager instance = new UserManager();	
+	private static UserDao dao = new UserDao();
 
 	private UserManager() {
 	}
@@ -24,5 +26,9 @@ public class UserManager {
 		user.setUserType(userType);
 		
 		return user;
+	}
+	
+	public User[] getUsers() {
+		return dao.getUsers();
 	}
 }

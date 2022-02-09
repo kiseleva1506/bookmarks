@@ -1,11 +1,16 @@
 package com.kiseleva15.thrillio.managers;
 
+import com.kiseleva15.thrillio.dao.BookmarkDao;
 import com.kiseleva15.thrillio.entities.Book;
+import com.kiseleva15.thrillio.entities.Bookmark;
 import com.kiseleva15.thrillio.entities.Movie;
+import com.kiseleva15.thrillio.entities.User;
+import com.kiseleva15.thrillio.entities.UserBookmark;
 import com.kiseleva15.thrillio.entities.WebLink;
 
 public class BookmarkManager {
 	private static BookmarkManager instance = new BookmarkManager();
+	private static BookmarkDao dao = new BookmarkDao();
 
 	private BookmarkManager() {
 	}
@@ -50,5 +55,17 @@ public class BookmarkManager {
 		webLink.setHost(host);
 
 		return webLink;
+	}
+	
+	public Bookmark[][] getBookmarks() {
+		return dao.getBookmarks();
+	}
+
+	public void saveUserBookmark(User user, Bookmark bookmark) {
+		UserBookmark userBookmark = new UserBookmark();
+		userBookmark.setUser(user);
+		userBookmark.setBookmark(bookmark);
+		
+		dao.saveUserBookmark(userBookmark);
 	}
 }
