@@ -36,7 +36,7 @@ public class Launch {
 	}
 	
 	private static void start() {
-//		System.out.println("\n2. Bookmarking ...");
+		System.out.println("\n2. Bookmarking ...");
 		for (User user : users) {
 			View.browse(user, bookmarks);
 		}
