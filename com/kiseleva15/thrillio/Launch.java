@@ -1,13 +1,15 @@
 package com.kiseleva15.thrillio;
 
+import java.util.List;
+
 import com.kiseleva15.thrillio.entities.Bookmark;
 import com.kiseleva15.thrillio.entities.User;
 import com.kiseleva15.thrillio.managers.BookmarkManager;
 import com.kiseleva15.thrillio.managers.UserManager;
 
 public class Launch {
-	private static User[] users;
-	private static Bookmark[][] bookmarks;
+	private static List<User> users;
+	private static List<List<Bookmark>> bookmarks;
 	
 	private static void loadData() {
 		System.out.println("1. Loading data ...");
@@ -28,7 +30,7 @@ public class Launch {
 	}
 	
 	private static void printBookmarkData() {
-		for (Bookmark[] bookmarkList : bookmarks) {
+		for (List<Bookmark> bookmarkList : bookmarks) {
 			for (Bookmark bookmark : bookmarkList) {
 				System.out.println(bookmark);
 			}

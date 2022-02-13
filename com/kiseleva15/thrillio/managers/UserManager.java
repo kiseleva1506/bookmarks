@@ -1,5 +1,7 @@
 package com.kiseleva15.thrillio.managers;
 
+import java.util.List;
+
 import com.kiseleva15.thrillio.dao.UserDao;
 import com.kiseleva15.thrillio.entities.User;
 
@@ -28,7 +30,7 @@ public class UserManager {
 		return user;
 	}
 	
-	public User[] getUsers() {
+	public List<User> getUsers() {
 		return dao.getUsers();
 	}
 }

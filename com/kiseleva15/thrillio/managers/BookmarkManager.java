@@ -2,6 +2,7 @@ package com.kiseleva15.thrillio.managers;
 
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
+import java.util.List;
 
 import com.kiseleva15.thrillio.dao.BookmarkDao;
 import com.kiseleva15.thrillio.entities.Book;
@@ -62,7 +63,7 @@ public class BookmarkManager {
 		return webLink;
 	}
 
-	public Bookmark[][] getBookmarks() {
+	public List<List<Bookmark>> getBookmarks() {
 		return dao.getBookmarks();
 	}
 

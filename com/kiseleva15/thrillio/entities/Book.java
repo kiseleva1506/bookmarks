@@ -2,8 +2,6 @@ package com.kiseleva15.thrillio.entities;
 
 import java.util.Arrays;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.kiseleva15.thrillio.constants.BookGenre;
 import com.kiseleva15.thrillio.partner.Shareable;
 
